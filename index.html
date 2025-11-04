@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Petualangan Memancing 3D 🎣</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- three.js dari CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js"></script>
+</head>
+<body>
+  <div id="ui">
+    <div id="menu" class="panel">
+      <h1>Petualangan Memancing 3D 🎣</h1>
+      <p class="lead">Belajar & bermain — arahkan kail, tangkap ikan, jawab kuis!</p>
+      <div class="row">
+        <button id="startBtn" class="btn primary">Mulai Game</button>
+        <button id="howBtn" class="btn ghost">Cara Main</button>
+      </div>
+    </div>
+
+    <div id="hud" class="panel hidden">
+      <div>❤️ <span id="lives">3</span></div>
+      <div>⏱️ <span id="timeDisplay">02:00</span></div>
+      <div>🎯 <span id="score">0</span>/<span id="target">0</span></div>
+      <button id="menuBtn" class="btn ghost small">☰</button>
+    </div>
+
+    <div id="dropdown" class="panel hidden">
+      <button id="retryBtn" class="btn primary">🔁 Coba Lagi</button>
+      <button id="backBtn" class="btn ghost">🏠 Menu</button>
+    </div>
+
+    <div id="questionModal" class="modal hidden" role="dialog" aria-modal="true">
+      <div id="qText" class="qtext">1 + 1 = ?</div>
+      <div id="qOptions" class="qopts"></div>
+    </div>
+
+    <div id="endModal" class="modal hidden">
+      <h2 id="endTitle"></h2>
+      <p id="endMsg"></p>
+      <div id="endButtons">
+        <button id="nextBtn" class="btn primary">Lanjut</button>
+        <button id="retryEndBtn" class="btn primary">Coba Lagi</button>
+        <button id="toMenuBtn" class="btn ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="howPanel" class="panel hidden">
+      <h3>Cara Bermain</h3>
+      <ol>
+        <li>Gunakan ← → untuk menggerakkan kail (kiri/kanan).</li>
+        <li>Tekan spasi atau klik tombol 🎣 di layar untuk menurunkan kail.</li>
+        <li>Jika kail mengenai ikan: jawab soal pilihan ganda — benar → menangkap ikan, salah → kehilangan nyawa.</li>
+      </ol>
+      <button id="closeHow" class="btn primary">Tutup</button>
+    </div>
+  </div>
+
+  <!-- container WebGL -->
+  <div id="container"></div>
+
+  <!-- script utama -->
+  <script src="script.js" type="module"></script>
+</body>
+</html>

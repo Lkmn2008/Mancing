@@ -1,0 +1,60 @@
+/* Basic & theme */
+:root{
+  --accent: #0288d1;
+  --bg1: #c9f0ff;
+  --bg2: #79d0f6;
+  --panel: rgba(255,255,255,0.95);
+  --muted: #06425b;
+  --btn: #ffd54f;
+}
+
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; font-family: "Segoe UI", Roboto, Arial, sans-serif; -webkit-font-smoothing:antialiased; background: linear-gradient(180deg,var(--bg1),var(--bg2)); }
+
+#container { width:100%; height:100vh; display:block; }
+
+/* UI panels */
+.panel {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  background: rgba(255,255,255,0.9);
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  color: #023147;
+}
+
+#menu { left:50%; top:48%; transform: translate(-50%,-48%); width: 360px; text-align:center; }
+#menu .lead { color: var(--muted); font-weight:600; margin-bottom:12px; }
+
+/* hud top-right */
+#hud { right: 12px; left: auto; top: 12px; display:flex; gap:12px; align-items:center; z-index:50; pointer-events:auto; }
+#hud > div { background: rgba(255,255,255,0.95); padding:8px 10px; border-radius:8px; font-weight:700; }
+
+/* dropdown */
+#dropdown { right:12px; top:64px; left:auto; display:flex; flex-direction:column; gap:8px; width:140px; }
+
+/* modal */
+.modal { left:50%; top:50%; transform: translate(-50%,-50%); width:360px; max-width:92%; text-align:center; padding:14px; border-radius:12px; background: rgba(0,0,0,0.8); color:white; z-index:90; }
+.qtext { font-size:22px; font-weight:700; }
+.qopts { margin-top:12px; display:flex; flex-direction:column; gap:10px; }
+
+.hidden { display:none; }
+
+/* buttons */
+.btn { border:none; border-radius:10px; padding:8px 12px; cursor:pointer; font-size:14px; }
+.primary { background: var(--btn); color:#003047; box-shadow: 0 6px 12px rgba(0,0,0,0.06); }
+.ghost { background:white; border:2px solid var(--accent); color:var(--accent); }
+.small { padding:6px 8px; font-size:12px; }
+
+/* end modal */
+#endModal h2 { margin:6px 0; }
+#endModal p { margin:6px 0 10px; color:#f0f0f0; }
+#endButtons { display:flex; gap:8px; justify-content:center; margin-top:8px; }
+
+/* responsive small */
+@media (max-width:700px){
+  #menu { width: 92%; left:50%; top:46%; transform: translate(-50%,-46%); }
+  .modal { width:92%; }
+}
